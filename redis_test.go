@@ -19,7 +19,7 @@ func TestRedis(t *testing.T) {
 			User:    "ubuntu",
 			Port:    "22",
 			KeyFile: `C:\Users\ww\.ssh\id_rsa`,
-			Type:    SSHKeyTypeKey,
+			KeyType: SSHKeyTypeKey,
 		},
 	)
 	if err != nil {

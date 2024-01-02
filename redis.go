@@ -21,7 +21,7 @@ type SSHConfig struct {
 	Host     string
 	User     string
 	Port     string
-	Type     SSHKeyType
+	KeyType  SSHKeyType
 	Password string
 	KeyFile  string
 	TimeOut  time.Duration
@@ -98,7 +98,7 @@ func NewRedisClient(redisC *RedisConfig, sshC *SSHConfig) (*RedisClient, error) 
 	)
 	if sshC != nil {
 		var err error
-		switch sshC.Type {
+		switch sshC.KeyType {
 		case SSHKeyTypeKey:
 			sshClient, err = sshC.dialWithKeyFile()
 		case SSHKeyTypePassword:
